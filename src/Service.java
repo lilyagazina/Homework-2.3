@@ -1,3 +1,12 @@
+
 public interface Service {
-    void check(Car car, Truck truck, Bicycle bicycle);
+
+    void checkTransport(Тransport transport);
+
+    void check(Car car);
+
+    void check(Truck truck);
+
+    void check(Bicycle bicycle);
+
 }

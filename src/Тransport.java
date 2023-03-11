@@ -22,14 +22,8 @@ public class Тransport {
     public void setWheelsCount(int wheelsCount) {
         this.wheelsCount = wheelsCount;
     }
+
     public void updateTyre() {
         System.out.println("Меняем покрышку");
-    }
-    public void checkEngine() {
-        System.out.println("Проверяем двигатель");
-    }
-
-    public void checkTrailer() {
-        System.out.println("Проверяем прицеп");
     }
 }

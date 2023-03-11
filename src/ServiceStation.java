@@ -1,23 +1,29 @@
-public class ServiceStation implements Service {
-    public void check(Car car, Truck truck, Bicycle bicycle) {
-        if (car != null) {
-            System.out.println("Обслуживаем " + car.getModelName());
-            for (int i = 0; i < car.getWheelsCount(); i++) {
-                car.updateTyre();
-            }
-            car.checkEngine();
-        } else if (truck != null) {
-            System.out.println("Обслуживаем " + truck.getModelName());
-            for (int i = 0; i < truck.getWheelsCount(); i++) {
-                truck.updateTyre();
-            }
-            truck.checkEngine();
-            truck.checkTrailer();
-        } else if (bicycle != null) {
-            System.out.println("Обслуживаем " + bicycle.getModelName());
-            for (int i = 0; i < bicycle.getWheelsCount(); i++) {
-                bicycle.updateTyre();
+
+
+public class ServiceStation {
+
+    private void checkTransport(Тransport transport) {
+        if (transport != null) {
+            System.out.println("Обслуживаем " + transport.getModelName());
+            for (int i = 0; i < transport.getWheelsCount(); i++) {
+                transport.updateTyre();
             }
         }
     }
+
+    public void check(Car car) {
+        checkTransport(car);
+        car.checkEngine();
+    }
+
+    public void check(Truck truck) {
+        checkTransport(truck);
+        truck.checkTrailer();
+        truck.checkEngine();
+    }
+
+    public void check(Bicycle bicycle) {
+        checkTransport(bicycle);
+    }
+
 }
